@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactForm from '../components/ContactForm';
+import MobileMenu from '../components/MobileMenu';
+import { BUSINESS } from '../config/business';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '#services' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+---
+
+<BaseLayout title={BUSINESS.name}>
+  <header>
+    <MobileMenu links={navLinks} client:load />
+  </header>
+
+  <main>
+    <section>
+      <h1>{BUSINESS.name}</h1>
+      <p>{BUSINESS.tagline}</p>
+      <p>{BUSINESS.description}</p>
+      <ul>
+        <li><a href={`tel:${BUSINESS.phone}`}>{BUSINESS.phone}</a></li>
+        <li><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></li>
+        <li>
+          {BUSINESS.streetAddress}, {BUSINESS.addressLocality},{' '}
+          {BUSINESS.addressRegion} {BUSINESS.postalCode}
+        </li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <FAQ />
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <ContactForm accessKey={accessKey} client:visible />
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      {BUSINESS.name} &bull; {BUSINESS.phone} &bull; {BUSINESS.streetAddress},{' '}
+      {BUSINESS.addressLocality}, {BUSINESS.addressRegion} {BUSINESS.postalCode}
+    </p>
+    <p style="color: #e11d48; font-weight: bold;">
+      PLACEHOLDER PAGE — replace with client design before launch
+    </p>
+  </footer>
+</BaseLayout>

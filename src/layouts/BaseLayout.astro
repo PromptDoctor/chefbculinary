@@ -1,0 +1,24 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Schema from '../components/Schema.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Override the canonical URL for this page */
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} canonical={canonical} />
+    <Schema />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

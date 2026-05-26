@@ -1,0 +1,101 @@
+---
+import { BUSINESS } from '../config/business';
+
+const {
+  domain, name, legalName, phone, email,
+  streetAddress, addressLocality, addressRegion, postalCode, addressCountry,
+  geo, description, businessType, priceRange, areaServed,
+  openingHours, foundingDate, founders, services, faq,
+  logo, logoRaster, ogImage, social,
+} = BUSINESS;
+
+const bizType =
+  businessType === 'LocalBusiness' ? 'LocalBusiness' : ['LocalBusiness', businessType];
+
+// googleBusinessProfile lives in social, so Object.values picks it up automatically.
+// The filter removes any undefined optional fields before they enter the sameAs array.
+const sameAs = (Object.values(social) as (string | undefined)[]).filter(
+  (v): v is string => Boolean(v),
+);
+
+// Prefer the raster variant for schema.org — Google rejects SVG for logo/image properties.
+const logoSchemaUrl = `${domain}${logoRaster ?? logo}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': bizType,
+      '@id': `${domain}/#business`,
+      name,
+      ...(legalName ? { legalName } : {}),
+      description,
+      telephone: phone,
+      email,
+      url: domain,
+      logo: logoSchemaUrl,
+      image: `${domain}${ogImage}`,
+      ...(priceRange ? { priceRange } : {}),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress,
+        addressLocality,
+        addressRegion,
+        postalCode,
+        addressCountry,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: geo.latitude,
+        longitude: geo.longitude,
+      },
+      areaServed: areaServed.map((area) => ({ '@type': 'City', name: area })),
+      ...(openingHours ? { openingHours } : {}),
+      ...(foundingDate ? { foundingDate } : {}),
+      ...(founders?.length ? { founder: founders.map((n) => ({ '@type': 'Person', name: n })) } : {}),
+      sameAs,
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${domain}/#organization`,
+      name,
+      url: domain,
+      logo: {
+        '@type': 'ImageObject',
+        url: logoSchemaUrl,
+      },
+      sameAs,
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${domain}/#services`,
+      name: `${name} Services`,
+      itemListElement: services.map((service, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Service',
+          name: service.name,
+          description: service.description,
+          url: service.url ? `${domain}${service.url}` : domain,
+          provider: { '@id': `${domain}/#business` },
+        },
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${domain}/#faq`,
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
