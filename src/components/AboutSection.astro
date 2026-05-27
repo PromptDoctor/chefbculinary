@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-portrait">
+        <Image
+          src="/assets/about.png"
+          alt="Chef B holding a fresh peach in his prep kitchen in Swansea, IL"
+          width={720}
+          height={900}
+        />
+        <div class="badge">
+          <div>
+            <div class="label">CHEF / OWNER</div>
+            <div class="val">Chef B</div>
+          </div>
+          <div style="text-align:right">
+            <div class="label">BASED IN</div>
+            <div class="val">SWANSEA, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <span class="eyebrow">— The Kitchen Behind The Brand</span>
+        <h3>Real food,<br />made with <em>care</em>.</h3>
+        <p>Chef B has been feeding the Metro East for over a decade — building menus that pull from soul food, Caribbean, and modern American kitchens. Every event starts the same way: a real conversation, real ingredients, and a plate worth remembering.</p>
+        <p>From whole-pig roasts under foil to delicate caprese skewers, the goal stays the same — make your guests feel taken care of.</p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="num">01</div>
+            <div class="title">Sourced Local</div>
+          </div>
+          <div class="pillar">
+            <div class="num">02</div>
+            <div class="title">Cooked Fresh</div>
+          </div>
+          <div class="pillar">
+            <div class="num">03</div>
+            <div class="title">Plated With Love</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

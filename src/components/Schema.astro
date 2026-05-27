@@ -10,7 +10,9 @@ const {
 } = BUSINESS;
 
 const bizType =
-  businessType === 'LocalBusiness' ? 'LocalBusiness' : ['LocalBusiness', businessType];
+  businessType === 'LocalBusiness'
+    ? 'LocalBusiness'
+    : ['LocalBusiness', 'FoodEstablishment', businessType];
 
 // googleBusinessProfile lives in social, so Object.values picks it up automatically.
 // The filter removes any undefined optional fields before they enter the sameAs array.
@@ -28,6 +30,7 @@ const schema = {
       '@type': bizType,
       '@id': `${domain}/#business`,
       name,
+      alternateName: ['Doggie Macs', "Doggie Mac's Food Truck"],
       ...(legalName ? { legalName } : {}),
       description,
       telephone: phone,

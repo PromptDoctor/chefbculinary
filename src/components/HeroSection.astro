@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-image">
+      <Image
+        src="/assets/hero.png"
+        alt="Sliced beef tenderloin over whipped potatoes by Chef B"
+        width={900}
+        height={1200}
+        loading="eager"
+        decoding="sync"
+      />
+    </div>
+
+    <div class="hero-copy">
+      <span class="eyebrow hero-eyebrow">Est. Swansea, IL · Catering &amp; Food Truck</span>
+      <h1>From his<br />kitchen to <em>your</em><br />gathering.</h1>
+      <p class="lede">
+        Chef B Culinary handcrafts unforgettable menus for weddings, corporate events, and
+        backyard celebrations across the Metro East — and runs Doggie Macs, the food truck
+        permanently parked at Soulcial Kitchen.
+      </p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-primary">Plan your event <span aria-hidden="true">→</span></a>
+        <a href="#doggie" class="btn btn-outline">Visit the truck</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">300+</div>
+      <div class="hero-stat-label">EVENTS CATERED</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">33 yr</div>
+      <div class="hero-stat-label">CULINARY CRAFT</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">1 truck</div>
+      <div class="hero-stat-label">PERMANENTLY PARKED</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">∞ pork</div>
+      <div class="hero-stat-label">WHOLE-PIG ROASTS</div>
+    </div>
+  </div>
+</section>

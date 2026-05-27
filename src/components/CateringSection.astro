@@ -1,0 +1,321 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="catering" id="catering">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Catering<br />&amp; <em>events</em>.</h2>
+      <p>From intimate dinners to 200-guest receptions. Three transparent per-person tiers — pick a plate, add a side, and we'll build the rest around your day.</p>
+    </div>
+
+    <!-- ── Tier cards ───────────────────────────────── -->
+    <div class="tiers">
+
+      <!-- 01 Classic -->
+      <article class="tier" id="tier-classic">
+        <header class="tier-head">
+          <div class="tier-num">/ 01</div>
+          <div class="tier-title">
+            <h3>Classic<br />Entrees</h3>
+            <div class="tier-price">
+              <span class="price-big">$16</span>
+              <span class="price-sub">per person</span>
+            </div>
+          </div>
+        </header>
+        <div class="tier-img">
+          <Image
+            src="/assets/hero.png"
+            alt="Plated classic entree — sliced beef tenderloin over whipped potatoes"
+            width={600}
+            height={440}
+          />
+        </div>
+        <ul class="tier-list">
+          <li>
+            <span class="dish">Chicken Marsala</span>
+            <span class="dish-desc">Chicken breast, mushrooms, marsala wine sauce</span>
+          </li>
+          <li>
+            <span class="dish">Roast Chicken</span>
+            <span class="dish-desc">Whole bone-in chicken, roasted in butter &amp; fresh herbs</span>
+          </li>
+          <li>
+            <span class="dish">Fried Chicken</span>
+            <span class="dish-desc">Bone-in chicken, fried golden brown</span>
+          </li>
+          <li>
+            <span class="dish">Chicken Wellington</span>
+            <span class="dish-desc">Chicken breast, mushroom duxelle, wrapped in puff pastry</span>
+          </li>
+          <li>
+            <span class="dish">Chicken Parmesan</span>
+            <span class="dish-desc">Chicken breast, house-made marinara, provel cheese</span>
+          </li>
+          <li>
+            <span class="dish">Chicken Piccata</span>
+            <span class="dish-desc">Chicken breast, lemon butter sauce, capers</span>
+          </li>
+          <li>
+            <span class="dish">Jerk Chicken</span>
+            <span class="dish-desc">Jamaican-spiced roasted chicken</span>
+          </li>
+          <li>
+            <span class="dish">Roasted Pork Loin</span>
+            <span class="dish-desc">Pork loin rubbed in fresh herbs &amp; garlic</span>
+          </li>
+          <li>
+            <span class="dish">Jerk Pork</span>
+            <span class="dish-desc">Pork shoulder rubbed in Jamaican spices &amp; smoked</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- 02 Premium (featured) -->
+      <article class="tier featured" id="tier-premium">
+        <header class="tier-head">
+          <div class="tier-num">/ 02 — PREMIUM</div>
+          <div class="tier-title">
+            <h3>Premium<br />Entrees</h3>
+            <div class="tier-price">
+              <span class="price-big">$20</span>
+              <span class="price-sub">per person</span>
+            </div>
+          </div>
+        </header>
+        <div class="tier-img">
+          <Image
+            src="/assets/whole-pig.png"
+            alt="Whole-pig roast — Chef B's signature large-format event centerpiece"
+            width={600}
+            height={440}
+          />
+        </div>
+        <ul class="tier-list">
+          <li>
+            <span class="dish">Prime Rib of Beef</span>
+            <span class="dish-desc">Slow-roasted, herb-crusted, au jus</span>
+          </li>
+          <li>
+            <span class="dish">Grilled Steaks</span>
+            <span class="dish-desc">Hand-cut, flame-grilled to order</span>
+          </li>
+          <li>
+            <span class="dish">Beef Wellington</span>
+            <span class="dish-desc">Beef tenderloin, mushroom duxelle, puff pastry</span>
+          </li>
+          <li>
+            <span class="dish">Roasted Duck</span>
+            <span class="dish-desc">Crispy skin, citrus glaze</span>
+          </li>
+          <li>
+            <span class="dish">Salmon</span>
+            <span class="dish-desc">Grilled or pan-seared</span>
+          </li>
+          <li>
+            <span class="dish">Shrimp Scampi</span>
+            <span class="dish-desc">Garlic, butter, white wine, lemon</span>
+          </li>
+          <li>
+            <span class="dish">Lobster Tails</span>
+            <span class="dish-desc">Butter-poached, drawn butter on the side</span>
+          </li>
+          <li>
+            <span class="dish">Chilean Sea Bass</span>
+            <span class="dish-desc">Pan-seared, herb beurre blanc</span>
+          </li>
+          <li>
+            <span class="dish">Red Snapper</span>
+            <span class="dish-desc">Whole or filleted, market preparation</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- 03 Pasta -->
+      <article class="tier" id="tier-pasta">
+        <header class="tier-head">
+          <div class="tier-num">/ 03</div>
+          <div class="tier-title">
+            <h3>Pasta<br />Entrees</h3>
+            <div class="tier-price">
+              <span class="price-big">$15</span>
+              <span class="price-sub">per person</span>
+            </div>
+          </div>
+        </header>
+        <div class="tier-img">
+          <Image
+            src="/assets/jerk-pork-mac.png"
+            alt="Jerk pork mac and cheese — a Doggie Macs signature dish"
+            width={600}
+            height={440}
+          />
+        </div>
+        <ul class="tier-list">
+          <li>
+            <span class="dish">Fettuccine Alfredo</span>
+            <span class="dish-desc">Cream, butter, parmesan</span>
+          </li>
+          <li>
+            <span class="dish">Linguini Vodka</span>
+            <span class="dish-desc">Tomato cream, vodka, fresh basil</span>
+          </li>
+          <li>
+            <span class="dish">Spaghetti Red Sauce</span>
+            <span class="dish-desc">House marinara, garlic, herbs</span>
+          </li>
+          <li>
+            <span class="dish">Penne Primavera</span>
+            <span class="dish-desc">Seasonal vegetables, light cream</span>
+          </li>
+          <li>
+            <span class="dish">Pasta Con Broccoli</span>
+            <span class="dish-desc">St. Louis classic, tomato cream, broccoli</span>
+          </li>
+          <li>
+            <span class="dish">Garlic Butter Penne</span>
+            <span class="dish-desc">Roasted garlic, butter, parmesan</span>
+          </li>
+        </ul>
+        <div class="tier-addons">
+          <span class="tier-addons-label">/ ADD A PROTEIN</span>
+          <div class="addon-row">
+            <span>Add Chicken</span>
+            <span class="addon-price">+ $3</span>
+          </div>
+          <div class="addon-row">
+            <span>Add Shrimp</span>
+            <span class="addon-price">+ $5</span>
+          </div>
+          <div class="addon-row">
+            <span>Add Lobster</span>
+            <span class="addon-price">+ $10</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ── Tier footer ──────────────────────────────── -->
+    <div class="tier-footer">
+      <p>Menus include house-baked rolls. Sides, salads, desserts, staffing and rentals priced per event — Chef B will build a quote around your headcount &amp; venue.</p>
+      <a href="#book" class="btn btn-dark">Request a custom quote <span aria-hidden="true">→</span></a>
+    </div>
+
+    <!-- ── Party packages ───────────────────────────── -->
+    <div class="packages">
+      <div class="packages-head">
+        <span class="eyebrow">— Group Packages &amp; Add-Ons</span>
+        <h3>Mac Bars, Burger Bars<br />&amp; <em>more</em>.</h3>
+        <p>Flat-rate packages for crowds of any size. Mix and match add-ons to build the spread your guests deserve.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- Doggie Macs Catering -->
+        <div class="pkg-col">
+          <span class="pkg-col-label">// DOGGIE MACS CATERING</span>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Grandma's Baked Mac &amp; Cheese</span>
+              <span class="pkg-price">$80 / half pan</span>
+            </div>
+            <p class="pkg-desc">Award-winning recipe — feeds a crowd.</p>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Loaded Nacho Bar</span>
+              <span class="pkg-price">$150 / 35 ppl</span>
+            </div>
+            <p class="pkg-desc">Chips, cheese sauce, pico, one protein. Additional add-ons available.</p>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Hot Dog Bar</span>
+              <span class="pkg-price">$90 / 35 ppl</span>
+            </div>
+            <p class="pkg-desc">All-beef hot dogs, buns, ketchup, mustard, relish. Additional toppings available.</p>
+          </div>
+        </div>
+
+        <!-- Burger Bar Catering -->
+        <div class="pkg-col">
+          <span class="pkg-col-label">// BURGER BAR CATERING</span>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Burger Bar</span>
+              <span class="pkg-price">$385 / 35 ppl</span>
+            </div>
+            <p class="pkg-desc">¼lb all-beef patties, buns, cheese, lettuce, tomato, onion, ketchup, mustard, mayo.</p>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Famous Fried Chicken</span>
+              <span class="pkg-price">$210 / 35 ppl</span>
+            </div>
+            <p class="pkg-desc">Mixed whole chicken. Sides are extra.</p>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Chicken Nuggs</span>
+              <span class="pkg-price">$70 / 10 lbs</span>
+            </div>
+            <p class="pkg-desc">Dark meat nuggets with your pick of dipping sauce: candied, jerk, Asian ponzu, buffalo, BBQ, ranch, or garlic parm.</p>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Wings</span>
+              <span class="pkg-price">$70 / 10 lbs</span>
+            </div>
+            <p class="pkg-desc">Garlic parm and other sauces available.</p>
+          </div>
+        </div>
+
+        <!-- Protein Add-Ons -->
+        <div class="pkg-col">
+          <span class="pkg-col-label">// PROTEIN ADD-ONS</span>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Philly Steak</span>
+              <span class="pkg-price">$75</span>
+            </div>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Jerk Pork</span>
+              <span class="pkg-price">$75</span>
+            </div>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Garlic Shrimp</span>
+              <span class="pkg-price">$60</span>
+            </div>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Nacho Cheese Sauce</span>
+              <span class="pkg-price">$50</span>
+            </div>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Applewood Smoked Bacon</span>
+              <span class="pkg-price">$55</span>
+            </div>
+          </div>
+          <div class="pkg-item">
+            <div class="pkg-row">
+              <span class="pkg-name">Buffalo Chicken</span>
+              <span class="pkg-price">$45</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

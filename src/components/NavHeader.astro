@@ -1,0 +1,35 @@
+---
+import MobileMenu from './MobileMenu';
+import { Image } from 'astro:assets';
+
+const navLinks = [
+  { label: 'Catering',    href: '#catering' },
+  { label: 'Doggie Macs', href: '#doggie'   },
+  { label: 'Soulcial',    href: '#soulcial' },
+  { label: 'Gallery',     href: '#gallery'  },
+  { label: 'FAQ',         href: '#faq'      },
+  { label: 'Book a tasting', href: '#book'  },
+];
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <Image src="/assets/logo.svg" alt="Chef B Culinary" height={40} width={160} class="nav-logo" />
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#catering">Catering</a>
+      <a href="#doggie">Doggie Macs</a>
+      <a href="#soulcial">Soulcial</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a href="#book" class="nav-cta">Book a tasting →</a>
+
+    <div class="nav-mobile">
+      <MobileMenu links={navLinks} client:load />
+    </div>
+  </div>
+</header>

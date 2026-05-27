@@ -1,0 +1,48 @@
+---
+import { BUSINESS } from '../config/business';
+---
+
+<section class="soulcial" id="soulcial">
+  <div class="container">
+    <div class="soulcial-card">
+
+      <div>
+        <span class="label">// IN PARTNERSHIP WITH</span>
+        <h3>Soulcial<br />Kitchen <em>+ Bar</em></h3>
+        <p>Doggie Macs lives outside Soulcial Kitchen — a Swansea staple for live music, drinks, and good times. Grab a drink inside, grab a mac outside, stay a while.</p>
+        <a
+          href="https://soulcialkitchen.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-cream"
+        >Visit Soulcial Kitchen ↗</a>
+      </div>
+
+      <div class="address-block">
+        <div class="row">
+          <span class="k">Address</span>
+          <span class="v">{BUSINESS.streetAddress}, {BUSINESS.addressLocality} {BUSINESS.addressRegion}</span>
+        </div>
+        <div class="row">
+          <span class="k">Distance</span>
+          <span class="v">~12 min from Belleville</span>
+        </div>
+        <div class="row">
+          <span class="k">Parking</span>
+          <span class="v">On-site, free</span>
+        </div>
+        <div class="row">
+          <span class="k">Truck open</span>
+          <span class="v">Thu – Sat</span>
+        </div>
+        <div class="row">
+          <span class="k">Phone</span>
+          <span class="v">
+            <a href={`tel:${BUSINESS.phone.replace(/\D/g, '')}`}>{BUSINESS.phone}</a>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

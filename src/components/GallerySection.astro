@@ -1,0 +1,145 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="gallery" id="gallery">
+  <div class="gallery-inner container">
+    <div class="section-head gallery-head">
+      <h2>A feast<br />for the <em>eyes</em>.</h2>
+      <div class="gallery-controls-row">
+        <p>Recent plates, events and pop-ups. Scroll&nbsp;→</p>
+        <div class="gallery-controls">
+          <button class="social-btn" data-gallery="prev" aria-label="Scroll gallery to previous images">‹</button>
+          <button class="social-btn" data-gallery="next" aria-label="Scroll gallery to next images">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-strip" id="galleryStrip">
+
+    <!-- 01 — wide -->
+    <div class="gallery-tile wide">
+      <Image
+        src="/assets/hero.png"
+        alt="Plated tenderloin sliced over whipped potatoes — a Chef B Culinary signature presentation"
+        width={1120}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 01 — PLATED</div>
+        <div class="name">Tenderloin &amp; Whipped Potato</div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/whole-pig.png"
+        alt="Whole-pig roast cooking over an open fire — Chef B's signature large-format centerpiece"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 02 — SIGNATURE</div>
+        <div class="name">Whole-Pig Roast</div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/jerk-pork-mac.png"
+        alt="Jerk Pork Mac bowl — Grandma's mac and cheese crowned with slow-braised jerk pork and candied sauce"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 03 — TRUCK</div>
+        <div class="name">Jerk Pork Mac</div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/veggie-skewers.png"
+        alt="Caprese skewers — fresh mozzarella, cherry tomatoes, and basil arranged on wooden skewers"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 04 — APPETIZER</div>
+        <div class="name">Caprese Skewers</div>
+      </div>
+    </div>
+
+    <!-- 05 — wide -->
+    <div class="gallery-tile wide">
+      <Image
+        src="/assets/catering-setup.png"
+        alt="Full buffet spread set up at Eckert's — chafing dishes, linens, and Chef B's full catering service on display"
+        width={1120}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 05 — EVENT</div>
+        <div class="name">Eckert's Buffet Spread</div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/chicago-dog.png"
+        alt="Chicago-style hot dog on a poppy seed bun loaded with mustard, neon relish, sport peppers, and celery salt"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 06 — TRUCK</div>
+        <div class="name">Chicago-Style Dog</div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/loaded-nachos.png"
+        alt="Loaded Nachos platter — chips smothered in house queso, pico de gallo, jalapeños, and sour cream"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 07 — TRUCK</div>
+        <div class="name">Loaded Nachos</div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="gallery-tile">
+      <Image
+        src="/assets/whole-pig-2.png"
+        alt="Citrus and lime whole pig roast — finished with a bright citrus glaze for a vibrant presentation"
+        width={760}
+        height={960}
+      />
+      <div class="caption">
+        <div class="label">/ 08 — SIGNATURE</div>
+        <div class="name">Citrus &amp; Lime Pig</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const strip = document.getElementById('galleryStrip');
+      if (!strip) return;
+      const dir = btn.dataset.gallery === 'prev' ? -1 : 1;
+      strip.scrollBy({ left: dir * 400, behavior: 'smooth' });
+    });
+  });
+</script>

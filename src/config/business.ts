@@ -23,6 +23,8 @@ export interface SocialLinks {
   twitter?: string;
   linkedin?: string;
   youtube?: string;
+  tiktok?: string;
+  
 }
 
 export interface Business {
@@ -98,68 +100,136 @@ export interface Business {
 // Phone 555-555-0100 and domain replace-me.example are intentionally fake.
 // ---------------------------------------------------------------------------
 export const BUSINESS: Business = {
-  name: "Acme Demo Co — REPLACE ME",
-  legalName: "Acme Demo Co LLC — REPLACE ME",
+  name: "Chef B Culinary",
+  legalName: "Chef B Culinary",
 
-  phone: "(555) 555-0100",
-  email: "hello@replace-me.example",
+  phone: "(314) 626-4221",
+  email: "doggiemacs@gmail.com",
 
-  streetAddress: "1 Placeholder Lane",
-  addressLocality: "Anytown",
+  streetAddress: "2625 N Illinois St",
+  addressLocality: "Swansea",
   addressRegion: "IL",
-  postalCode: "00000",
+  postalCode: "62226",
   addressCountry: "US",
 
-  geo: { latitude: 0, longitude: 0 },
+  geo: { latitude: 38.5395, longitude: -89.9889 },
 
-  domain: "https://www.replace-me.example",
+  domain: "https://chefbculinary.com",
 
   description:
-    "Replace this with a real business description — keep it under 160 characters for best meta results.",
-  tagline: "Replace This Tagline",
+    "Chef B Culinary delivers handcrafted catering across the St. Louis Metro East and runs Doggie Macs, the food truck permanently parked at Soulcial Kitchen in Swansea, IL.",
 
-  businessType: "LocalBusiness",
+  tagline: "From his kitchen to your gathering.",
+
+  businessType: "CateringService",
   priceRange: "$$",
-  areaServed: ["Anytown", "Replace Me"],
+
+  areaServed: [
+    "Swansea",
+    "Belleville",
+    "O'Fallon",
+    "Fairview Heights",
+    "Shiloh",
+    "Edwardsville",
+    "St. Louis",
+  ],
 
   hours: [
-    { days: "Monday–Friday", hours: "9:00 AM – 5:00 PM" },
-    { days: "Saturday–Sunday", hours: "Closed" },
+    { days: "Thursday – Saturday", hours: "11:00 AM – 2:00 PM" },
+    { days: "Thursday – Saturday", hours: "5:00 PM – 9:00 PM" },
+    { days: "Sunday – Wednesday", hours: "Closed" },
   ],
-  openingHours: ["Mo-Fr 09:00-17:00"],
+  openingHours: [
+    "Th-Sa 11:00-14:00",
+    "Th-Sa 17:00-21:00",
+  ],
 
-  foundingDate: "2000",
-  founders: ["Replace Me"],
+  founders: ["Chef B"],
 
   services: [
     {
-      name: "Service One — Replace Me",
-      description: "Replace with a real service description.",
-      // url: "/services/slug" — add only when a dedicated page exists
+      name: "Wedding Catering",
+      description:
+        "Full-service wedding catering including plated dinners, buffets, and live action stations for the St. Louis Metro East.",
     },
     {
-      name: "Service Two — Replace Me",
-      description: "Replace with a real service description.",
+      name: "Corporate Event Catering",
+      description:
+        "Drop-off and full-service catering for corporate events, holiday parties, and company gatherings.",
+    },
+    {
+      name: "Whole-Pig Roasts",
+      description:
+        "Signature whole-pig roasts for large gatherings and outdoor events across the Metro East.",
+    },
+    {
+      name: "Doggie Macs Food Truck",
+      description:
+        "Chef B Culinary serves the St. Louis Metro East with handcrafted catering and Doggie Macs, a food truck permanently parked at Soulcial Kitchen in Swansea, IL.",
+    },
+    {
+      name: "Private Chef & Intimate Dinners",
+      description:
+        "Private chef experiences and intimate dinner service for smaller groups starting at 25 guests.",
+    },
+    {
+      name: "Party Packages & Bars",
+      description:
+        "Flat-rate burger bars, mac bars, nacho bars, and hot dog bars for events of any size.",
     },
   ],
 
   faq: [
     {
-      question: "Replace with a real FAQ question?",
-      answer: "Replace with a real answer.",
+      question: "Where is the Doggie Macs food truck parked?",
+      answer:
+        "Doggie Macs is permanently parked at Soulcial Kitchen, 2625 N Illinois St, Swansea, IL 62226. We operate Thursday through Saturday, 11 AM – 2 PM and 5 PM – 9 PM.",
     },
     {
-      question: "Another placeholder FAQ question?",
-      answer: "Another placeholder answer.",
+      question: "How far in advance should I book catering?",
+      answer:
+        "We recommend reaching out at least 3 weeks ahead for events under 50 guests, and 6+ weeks for weddings, corporate events, and whole-pig roasts. We do our best to accommodate last-minute inquiries when capacity allows.",
+    },
+    {
+      question: "What areas do you serve?",
+      answer:
+        "We cater throughout the St. Louis Metro East including Swansea, Belleville, O'Fallon, Fairview Heights, Shiloh, Edwardsville, and St. Louis proper. Travel beyond 30 miles may include a small mileage fee.",
+    },
+    {
+      question: "Do you accommodate dietary restrictions?",
+      answer:
+        "Absolutely. Vegetarian, vegan, gluten-free, dairy-free, and allergy-conscious menus are part of every conversation. Tell us what your guests need and Chef B will build the menu around them.",
+    },
+    {
+      question: "What's your minimum guest count?",
+      answer:
+        "Most catering packages start at 25 guests. Smaller intimate dinners and private chef experiences are available — just ask.",
+    },
+    {
+      question: "Can the food truck come to my event?",
+      answer:
+        "The Doggie Macs truck is not available for off-site events or private parties — it's permanently parked at Soulcial Kitchen. For your event, we offer full catering with the same flavors and more.",
+    },
+    {
+      question: "Do you provide servers, setup and cleanup?",
+      answer:
+        "Yes. Drop-off, full-service buffet, plated dinners, and live action stations are all available. Staffing, chafing dishes, linens and rentals can be added to any package.",
+    },
+    {
+      question: "How does payment and deposit work?",
+      answer:
+        "A 25% deposit holds your date once the menu is finalized. Final headcount is locked 7 days out, and the balance is due day-of. We accept card, ACH, and Zelle.",
     },
   ],
 
   social: {
-    googleBusinessProfile: "https://maps.app.goo.gl/replace-me",
-    facebook: "https://www.facebook.com/replace-me",
+    googleBusinessProfile: "https://share.google/WX2ZzLYhqpiDCTORX",
+    facebook: "https://www.facebook.com/DoggieMacsFoodTruck/", 
+    instagram: "https://www.instagram.com/chefbculinary/",
+    tiktok: "https://www.tiktok.com/@fizzyglizzy75",
   },
 
   logo: "/assets/logo.svg",
   logoRaster: "/assets/logo.png",
-  ogImage: "/assets/og-image.png",
+  ogImage: "/assets/og.png",
 };

@@ -1,0 +1,47 @@
+---
+import ContactForm from './ContactForm';
+import { BUSINESS } from '../config/business';
+
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+---
+
+<section class="lead" id="book">
+  <div class="container">
+    <div class="lead-grid">
+
+      <!-- Static left side -->
+      <div class="lead-side">
+        <span class="eyebrow">— Plan your event</span>
+        <h2>Let's build<br />your <em>menu</em>.</h2>
+        <p>Tell us about the event in 90 seconds. Chef B will follow up within one business day with a tasting plan and a quote.</p>
+
+        <div class="lead-contact">
+          <div class="contact-row">
+            <span class="k">Phone</span>
+            <span class="v">
+              <a href={`tel:${BUSINESS.phone.replace(/\D/g, '')}`}>{BUSINESS.phone}</a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Email</span>
+            <span class="v">
+              <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Hours</span>
+            <span class="v">Thu – Sat · 11 – 2 &amp; 5 – 9</span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Service</span>
+            <span class="v">Metro East &amp; St. Louis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-step booking form island -->
+      <ContactForm accessKey={accessKey} client:visible />
+
+    </div>
+  </div>
+</section>
