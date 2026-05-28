@@ -218,7 +218,7 @@ export const BUSINESS: Business = {
     {
       question: "How does payment and deposit work?",
       answer:
-        "A 25% deposit holds your date once the menu is finalized. Final headcount is locked 7 days out, and the balance is due day-of. We accept card, ACH, and Zelle.",
+        "A 25% deposit holds your date once the menu is finalized. Final headcount is locked 7 days out, and the balance is due day-of. We accept cash, card, ACH, and Zelle.",
     },
   ],
 
